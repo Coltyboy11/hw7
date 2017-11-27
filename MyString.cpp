@@ -10,8 +10,7 @@ MyString::MyString()
 MyString::MyString(const char *cString)
 {
     nlength = getNlength(cString);
-    internalCString.release();
-    internalCString = make_unique<char[]>((size_t) cString);
+    internalCString = make_unique<char[]>(nlength);
     for(int i = 0; i < nlength; i++)
     {
         internalCString[i] = cString[i];
@@ -42,8 +41,8 @@ char *MyString::getInternalCString() const
 
 int MyString::compareStr(const MyString &lhs, const MyString &rhs)
 {
-    int right = getNlength(rhs.getInternalCString());
-    int left = getNlength(lhs.getInternalCString());
+    int right = rhs.nlength;
+    int left = lhs.nlength;
 
     if(left > right)
     {
