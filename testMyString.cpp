@@ -72,7 +72,6 @@ TEST_CASE("3) Testing MyString Compare")
 /*!
  * @test 4) Testing MyString Revert Method
  */
-/*
 TEST_CASE("4) Testing MyString Revert")
 {
     INFO("4) Testing MyString Revert");
@@ -88,7 +87,6 @@ TEST_CASE("4) Testing MyString Revert")
         REQUIRE(s2 == "321olleH");
     }
 }
-*/
 /*!
  * @test 5) Testing MyString << opeartor
  */
