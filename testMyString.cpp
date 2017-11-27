@@ -5,6 +5,7 @@
 /*!
  * @test 1) Testing MyString Constructor
  */
+
 TEST_CASE("1) Testing MyString")
 {
     INFO("1) Testing MyString");

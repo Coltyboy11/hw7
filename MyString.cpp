@@ -32,12 +32,12 @@ int MyString::getNlength(string x) const
 
 void MyString::reverseit()
 {
-    int temp;
-    for (int i = 0; i < (nlength)/2; ++i)
+    char temp;
+    for (int i = 0; i < (nlength)/2; i++)
     {
-        temp = internalCString[nlength-i-1];
-        internalCString[nlength-i-1] = internalCString[i];
-        internalCString[i] = temp;
+        temp = internalCString[i];
+        internalCString[i] = internalCString[nlength-i-1];
+        internalCString[nlength-i-1] = temp;
     }
 }
 char *MyString::getInternalCString() const
