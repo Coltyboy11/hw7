@@ -4,3 +4,61 @@
 #include <memory>
 #include "MyString.h"
 
+MyString::MyString()
+{}
+
+MyString::MyString(const char *cString)
+{
+    nlength = getNlength(cString);
+    internalCString.release();
+    internalCString = make_unique<char[]>((size_t) cString);
+    for(int i = 0; i < nlength; i++)
+    {
+        internalCString[i] = cString[i];
+    }
+
+}
+
+int MyString::getNlength(string x) const
+{
+    int i = 0;
+    do
+    {
+        i++;
+        x[i];
+
+    }while(x[i] != '\0');
+    return i;
+}
+
+void MyString::reverseit()
+{
+
+}
+char *MyString::getInternalCString() const
+{
+    return internalCString.get();
+}
+
+int MyString::compareStr(const MyString &lhs, const MyString &rhs)
+{
+    int right = getNlength(rhs.getInternalCString());
+    int left = getNlength(lhs.getInternalCString());
+
+    if(left > right)
+    {
+        return 1;
+    }
+    if(left < right)
+    {
+        return -1;
+    }
+    if(right == left && *lhs.getInternalCString() == *rhs.getInternalCString())
+    {
+        return 0;
+    }
+    if(right == left && lhs.getInternalCString() != rhs.getInternalCString())
+    {
+        return -2;
+    }
+}
