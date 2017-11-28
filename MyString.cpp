@@ -17,8 +17,8 @@ MyString::MyString()
 MyString::MyString(const char *cString)
 {
     nlength = getNlength(cString);
-    internalCString = make_unique<char[]>(nlength);
-    for(int i = 0; i < nlength; i++)
+    internalCString = make_unique<char[]>(nlength);            //(size_t) cString
+    for(int i = 0; i < nlength + 1; i++)
     {
         internalCString[i] = cString[i];
     }
@@ -29,7 +29,7 @@ MyString::MyString(const char *cString)
  * @param x : variable for the string
  * @return : Returns the integer length
  */
-int MyString::getNlength(string x) const
+int MyString::getNlength(const char* x) const
 {
     int i = 0;
     do

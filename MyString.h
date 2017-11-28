@@ -21,7 +21,7 @@ public:
     MyString(const char *cString);
 
 
-    int getNlength(string x) const;
+    int getNlength(const char* x) const;
     char * getInternalCString () const;
     void reverseit ();
     int compareStr(const MyString &lhs, const MyString &rhs);
