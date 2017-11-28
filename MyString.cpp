@@ -5,13 +5,13 @@
 #include "MyString.h"
 
 /*!
- * Constructor with no arguments
+ * MyString constructor with no arguments
  */
 MyString::MyString()
 {}
 
 /*!
- * Constructor with one argument
+ * MyString constructor with one argument
  * @param cString : Pointer for char array
  */
 MyString::MyString(const char *cString)
